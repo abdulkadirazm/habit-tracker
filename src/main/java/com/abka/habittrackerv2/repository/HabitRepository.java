@@ -1,2 +1,6 @@
-package com.abka.habittrackerv2.repository;public class HabitRepository {
-}
+package com.abka.habittrackerv2.repository;
+
+import com.abka.habittrackerv2.model.Habit;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface HabitRepository extends JpaRepository<Habit, Integer> {}

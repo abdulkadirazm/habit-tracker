@@ -1,2 +1,3 @@
-package com.abka.habittrackerv2.controller;public class CreateActivityRequest {
-}
+package com.abka.habittrackerv2.controller;
+
+public record CreateActivityRequest(Integer habitId) {}
