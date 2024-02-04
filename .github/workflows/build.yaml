@@ -23,16 +23,16 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
 
-      - name: Extract image metadata for ${{ matrix.image_name }}
+      - name: Extract image metadata
         id: meta
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.REPO_OWNER }}/habit-tracker
 
-      - name: Build and push ${{ matrix.image_name }}
+      - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ${{ matrix.image_name }}
+          context: .
           file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
